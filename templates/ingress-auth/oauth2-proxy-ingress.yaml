@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: oauth2-proxy
+  namespace: {{ .Values.ingressAuthNamespace }}
+spec:
+  rules:
+  - host: {{ .Values.torgueIngressName }}-{{ .Values.ingressAuthNamespace }}{{ .Values.oauth2.whitelistDomain }}
+    http:
+      paths:
+      - path: /oauth2
+        backend:
+          serviceName: oauth2-proxy
+          servicePort: 4180
+          
+          

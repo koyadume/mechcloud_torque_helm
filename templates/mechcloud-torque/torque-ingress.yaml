@@ -1,9 +1,11 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: torque
+  name: {{ .Values.torgueIngressName }}
   annotations:
     dev.okteto.com/generate-host: "true"
+    nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.{{ .Values.ingressAuthNamespace }}.svc.cluster.local:4180/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
 spec:
   rules:
   - http:
