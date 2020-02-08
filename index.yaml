@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  torque:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-02-08T15:09:11.713903+05:30"
+    description: Mechcloud Torque
+    digest: c83ef77c7e382b3d0713059c66f373e9a3b58f56f95c5a4299983e36a1824315
+    name: torque
+    type: application
+    urls:
+    - https://mechcloud.io/charts/torque-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-02-08T15:09:11.7056718+05:30"
