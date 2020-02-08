@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mechcloud-torque-ui
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mechcloud-torque-ui
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mechcloud-torque-ui
+    spec:
+      containers:
+      - name: mechcloud-torque-ui
+        image: mechcloud/mechcloud-torque-ui
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
+      
+      
