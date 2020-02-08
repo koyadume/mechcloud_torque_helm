@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  torque:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-02-08T16:36:33.1914128+05:30"
+    description: Mechcloud Torque
+    digest: d6ebcd29cc22b8c38d6058d3de6d736018d09c66cc90269797865654fba5dbfb
+    name: torque
+    type: application
+    urls:
+    - https://koyadume.github.io/mechcloud_torque_helm/torque-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-02-08T16:36:33.19045+05:30"
