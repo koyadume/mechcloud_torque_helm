@@ -32,6 +32,6 @@ helm install --set=torqueNamespace=<target namespace> torque .
 ```
 
 ## Need help?
-* Please log a ticket in this repository for any issue related to deployment.
-* For any application functionality related issue, kindly log a ticket in `https://github.com/mechcloud/mechcloud-torque` repository.
+* Please report any issue related to deployment here.
+* Issues related to application functionality can be reported in `https://github.com/mechcloud/mechcloud-torque` repository.
 
