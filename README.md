@@ -31,3 +31,7 @@ cd mechcloud_torque_helm
 helm install --set=torqueNamespace=<target namespace> torque .
 ```
 
+## Need help?
+* Please log a ticket in this repository for any issue related to deployment.
+* For any application functionality related issue, kindly log a ticket in `https://github.com/mechcloud/mechcloud-torque` repository.
+
