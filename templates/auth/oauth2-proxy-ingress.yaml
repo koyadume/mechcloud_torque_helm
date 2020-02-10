@@ -1,3 +1,4 @@
+{{ if .Values.authEnabled }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -13,5 +14,6 @@ spec:
         backend:
           serviceName: oauth2-proxy
           servicePort: 4180
+{{ end }}
           
           

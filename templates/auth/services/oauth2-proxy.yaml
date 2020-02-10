@@ -1,3 +1,4 @@
+{{ if .Values.authEnabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -10,5 +11,6 @@ spec:
     targetPort: 4180
   selector:
     app: oauth2-proxy
+{{ end }}
 
     

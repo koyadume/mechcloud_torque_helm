@@ -4,8 +4,10 @@ metadata:
   name: {{ .Values.torgueIngressName }}
   annotations:
     dev.okteto.com/generate-host: "true"
+    {{ if .Values.authEnabled }}
     nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
     nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+    {{ end }}
 spec:
   rules:
   - http:

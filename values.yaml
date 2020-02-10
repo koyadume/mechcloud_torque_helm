@@ -7,8 +7,10 @@ replicaCount: 1
 # This value should NOT be modified
 torgueIngressName: torque
 
+authEnabled: true
+
 # Target namespace where you want to deploy this app
-torqueNamespace: koyadume
+torqueNamespace: 
 
 # Configuration parameters for oauth2 provider
 oauth2:
