@@ -3,9 +3,14 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
+
 # This value should NOT be modified
 torgueIngressName: torque
+
+# Target namespace where you want to deploy this app
 torqueNamespace: koyadume
+
+# Configuration parameters for oauth2 provider
 oauth2:
    clientId:
    clientSecret:
@@ -14,7 +19,11 @@ oauth2:
    githubOrg: mechcloud
    githubTeam: torque
    whitelistDomain: .cloud.okteto.net
+
+# Configuration parameters for MongoDB
 mongo:
    hostPort: mechcloud-torque-mongodb:5020
    username: admin
    password: torque
+   
+   
