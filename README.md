@@ -7,7 +7,7 @@ git clone git@github.com:mechcloud/mechcloud_torque_helm.git
 ```
 
 ## Deployment options
-### Deploying with auth disabled
+### Deploying with authentication disabled
 * This is recommended for local or any other environment which can be accessed by you or your team ONLY.
 * Execute following commands to deploy torque -
 ```
@@ -15,7 +15,7 @@ cd mechcloud_torque_helm
 helm install --set=authEnabled=false torque .
 ```
 
-### Deploying with auth enabled
+### Deploying with authentication enabled
 * Update values in `mechcloud_torque_helm/values.yaml` file as per your target deployment.
   * This app uses [oauth2_proxy](https://pusher.github.io/oauth2_proxy) to secure it using an oauth2 provider.
   * Addtional configuration parameters (`githubOrg`, `githubTeam`) under `oauth2` section of `mechcloud_torque_helm/values.yaml` file are specific to `github` as oauth2 provider.
