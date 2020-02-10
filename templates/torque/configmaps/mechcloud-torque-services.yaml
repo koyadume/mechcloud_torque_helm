@@ -1,0 +1,6 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mechcloud-torque-services-configs
+data:
+ SERVICE_CLUSTER_MGMT_BASE_URL: http://mechcloud-torque-clustermgmt:5022

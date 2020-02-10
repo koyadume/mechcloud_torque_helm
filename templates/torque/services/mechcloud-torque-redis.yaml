@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mechcloud-torque-redis
+spec:
+  ports:
+    - name: "5025"
+      port: 5025
+      targetPort: 6379
+  selector:
+    app: mechcloud-torque-redis

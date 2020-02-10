@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mechcloud-torque-k8s-events
+spec:
+  ports:
+    - name: "5024"
+      port: 5024
+      targetPort: 5000
+  selector:
+    app: mechcloud-torque-k8s-events

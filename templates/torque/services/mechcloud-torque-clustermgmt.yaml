@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mechcloud-torque-clustermgmt
+spec:
+  ports:
+    - name: "5022"
+      port: 5022
+      targetPort: 5000
+  selector:
+    app: mechcloud-torque-clustermgmt

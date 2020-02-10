@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mechcloud-torque-k8s-adapter
+spec:
+  ports:
+    - name: "5023"
+      port: 5023
+      targetPort: 5000
+  selector:
+    app: mechcloud-torque-k8s-adapter

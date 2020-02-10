@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-ingressAuthNamespace: koyadume
+# ingressAuthNamespace: ingress-koyadume
 torgueIngressName: torque
 torqueNamespace: koyadume
 oauth2:
@@ -14,3 +14,7 @@ oauth2:
    githubOrg: mechcloud
    githubTeam: torque
    whitelistDomain: .cloud.okteto.net
+mongo:
+   hostPort: mechcloud-torque-mongodb:5020
+   username: admin
+   password: torque

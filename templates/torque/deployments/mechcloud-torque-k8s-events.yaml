@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mechcloud-torque-k8s-events
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mechcloud-torque-k8s-events
+  template:
+    metadata:
+      labels:
+        app: mechcloud-torque-k8s-events
+    spec:
+      containers:
+      - name: mechcloud-torque-k8s-events
+        image: mechcloud/mechcloud-torque-k8s-events
+        envFrom:
+        - configMapRef:
+            name: mechcloud-python-common-configs
+        - configMapRef:
+            name: mechcloud-torque-services-configs
+        - configMapRef:
+            name: mechcloud-torque-k8s-events-configs
+        ports:
+        - containerPort: 5000
+      restartPolicy: Always
+      
+      

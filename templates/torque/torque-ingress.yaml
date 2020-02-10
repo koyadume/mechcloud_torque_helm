@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.torgueIngressName }}
+  annotations:
+    dev.okteto.com/generate-host: "true"
+    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: mechcloud-torque-ui
+          servicePort: 5021
+      - path: /mechcloud-torque-clustermgmt
+        backend:
+          serviceName: mechcloud-torque-clustermgmt
+          servicePort: 5022
+      - path: /mechcloud-torque-k8s-adapter
+        backend:
+          serviceName: mechcloud-torque-k8s-adapter
+          servicePort: 5023
+      - path: /mechcloud-torque-k8s-events
+        backend:
+          serviceName: mechcloud-torque-k8s-events
+          servicePort: 5024
+          
+          
+          
+          

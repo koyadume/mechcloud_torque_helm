@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mechcloud-torque-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mechcloud-torque-redis
+  template:
+    metadata:
+      labels:
+        app: mechcloud-torque-redis
+    spec:
+      containers:
+      - name: mechcloud-torque-redis
+        image: redis:5-alpine
+        ports:
+        - containerPort: 6379
+      restartPolicy: Always
+      
+      

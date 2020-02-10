@@ -1,0 +1,38 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mechcloud-torque-clustermgmt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mechcloud-torque-clustermgmt
+  template:
+    metadata:
+      labels:
+        app: mechcloud-torque-clustermgmt
+    spec:
+      containers:
+      - name: mechcloud-torque-clustermgmt
+        image: mechcloud/mechcloud-torque-clustermgmt
+        envFrom:
+        - configMapRef:
+            name: mechcloud-python-common-configs
+        - configMapRef:
+            name: mechcloud-torque-clustermgmt-configs
+        env:
+        - name: MONGO_HOST_PORT
+          value: {{ .Values.mongo.hostPort }}
+        - name: MONGO_USER
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-creds
+              key: username
+        - name: MONGO_PWD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-creds
+              key: password
+        ports:
+        - containerPort: 5000
+      restartPolicy: Always

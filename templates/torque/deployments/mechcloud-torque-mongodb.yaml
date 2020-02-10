@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mechcloud-torque-mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mechcloud-torque-mongodb
+  template:
+    metadata:
+      labels:
+        app: mechcloud-torque-mongodb
+    spec:
+      containers:
+      - name: mechcloud-torque-mongodb
+        image: mongo:4.2-bionic
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-creds
+              key: username
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-creds
+              key: password
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: vol1
+          mountPath: /data/db
+          subPath: torque-mongodb
+      restartPolicy: Always
+      volumes:
+      - name: vol1
+        persistentVolumeClaim:
+          claimName: mechcloud-torque-pvc1
+      

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mechcloud-torque-mongodb
+spec:
+  ports:
+    - name: "5020"
+      port: 5020
+      targetPort: 27017
+  selector:
+    app: mechcloud-torque-mongodb

@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: oauth2-proxy
-  namespace: {{ .Values.ingressAuthNamespace }}
 spec:
   replicas: 1
   selector:
@@ -22,6 +21,7 @@ spec:
         - --github-org={{ .Values.oauth2.githubOrg }}
         - --github-team={{ .Values.oauth2.githubTeam }}
         - --whitelist-domain={{ .Values.oauth2.whitelistDomain }}
+        - --cookie-domain={{ .Values.oauth2.whitelistDomain }}
         env:
         - name: OAUTH2_PROXY_CLIENT_ID
           valueFrom:

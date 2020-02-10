@@ -2,10 +2,11 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: oauth2-proxy
-  namespace: {{ .Values.ingressAuthNamespace }}
+  # annotations:
+  #   dev.okteto.com/generate-host: "true"
 spec:
   rules:
-  - host: {{ .Values.torgueIngressName }}-{{ .Values.ingressAuthNamespace }}{{ .Values.oauth2.whitelistDomain }}
+  - host: {{ .Values.torgueIngressName }}-{{ .Values.torqueNamespace }}{{ .Values.oauth2.whitelistDomain }}
     http:
       paths:
       - path: /oauth2
