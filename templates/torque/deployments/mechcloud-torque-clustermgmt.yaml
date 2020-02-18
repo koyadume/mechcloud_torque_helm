@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mechcloud-torque-clustermgmt
-        image: mechcloud/mechcloud-torque-clustermgmt
+        image: mechcloud/mechcloud-torque-clustermgmt:v1.1.0
         envFrom:
         - configMapRef:
             name: mechcloud-python-common-configs
