@@ -16,15 +16,15 @@ spec:
         backend:
           serviceName: mechcloud-torque-ui
           servicePort: 5021
-      - path: /mechcloud-torque-clustermgmt
+      - path: /clustermgmt
         backend:
           serviceName: mechcloud-torque-clustermgmt
           servicePort: 5022
-      - path: /mechcloud-torque-k8s-adapter
+      - path: /k8s-adapter
         backend:
           serviceName: mechcloud-torque-k8s-adapter
           servicePort: 5023
-      - path: /mechcloud-torque-k8s-events
+      - path: /k8s-events
         backend:
           serviceName: mechcloud-torque-k8s-events
           servicePort: 5024
