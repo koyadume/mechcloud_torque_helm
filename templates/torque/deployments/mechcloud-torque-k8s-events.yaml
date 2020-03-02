@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mechcloud-torque-k8s-events
-        image: mechcloud/mechcloud-torque-k8s-events-py:v1.1.0
+        image: mechcloud/mechcloud-torque-k8s-events-py:v1.1.1
         envFrom:
         - configMapRef:
             name: mechcloud-python-common-configs
