@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
    name: mechcloud-torque-k8s-events-configs
 data:
-   CONTEXT_ROOT: mechcloud-torque-k8s-events
+   CONTEXT_ROOT: k8s-events
    REDIS_HOST: mechcloud-torque-redis
    REDIS_PORT: "5025"
    

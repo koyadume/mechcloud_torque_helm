@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mechcloud-torque-ui
-        image: mechcloud/mechcloud-torque-ui:v1.1.0
+        image: mechcloud/mechcloud-torque-ui:v1.2.0
         ports:
         - containerPort: 80
       restartPolicy: Always

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mechcloud-torque-k8s-adapter
-        image: mechcloud/mechcloud-torque-k8s-adapter:v1.1.1
+        image: mechcloud/mechcloud-torque-k8s-adapter:v1.2.0
         envFrom:
         - configMapRef:
             name: mechcloud-python-common-configs
